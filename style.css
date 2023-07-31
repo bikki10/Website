@@ -103,7 +103,7 @@ body {
 .home-content h3 {
   position: relative;
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 600;
   color: #fff;
 }
 
@@ -120,7 +120,7 @@ body {
 }
 
 .home-content h3 span {
-  position: relative;
+  position: inherit;
   color: #00abf0;
 
 }
@@ -129,15 +129,11 @@ body {
   content: '';
   position: absolute;
   top: 50%;
-  right: -8px;
+  right: -5px;
   width: 2px;
   height: 30px;
-  background: #081b29;
   transform: translateY(-45%);
-  animation: showRight 1s ease forwards;
-  animation-delay: 1.4s;
   background: #00abf0;
-
 }
 
 

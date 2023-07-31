@@ -1,26 +1,39 @@
-const dynamicText = document.querySelector("h1 span");
-const words=['Web Developer','Game Developer','Web Designer', 'Digital Marketer', 'QA Engineer'];
+setTimeout(() => {
+  const dynamicText = document.querySelector("h3 span");
+  const words = [
+    // "",
+    "Web Developer ",
+    "Game Developer ",
+    "Web Designer ",
+    "Digital Marketer ",
+    "QA Tester ",
+  ];
 
-let wordIndex = 0;
-let charIndex = 1;
-let isDeleting = false;
+  let wordIndex = 0;
+  let charIndex = 1;
+  let isDeleting = false;
 
-const typeEffect = ()=>{
-    const currentWord= words[wordIndex];
-    const currentchar=currentWord.substring(0, charIndex);
-    dynamicText.textContent = currentWord; 
+  const typeEffect = () => {
+    const currentWord = words[wordIndex];
 
-    if(!isDeleting && charIndex<currentWord.length){
-        charIndex++;
-        setTimeout(typeEffect, 200);
-    } else if(isDeleting && charIndex >0){
-        charIndex--;
-        setTimeout(typeEffect, 100);
-    } else{
-        isDeleting = !isDeleting;
-        
-        setTimeout(typeEffect, 1200);
+    const currentchar = currentWord.substring(0, charIndex);
+    dynamicText.textContent = currentchar;
+
+    if (!isDeleting && charIndex < currentWord.length) {
+      // If condition is true, type the next character
+      charIndex++;
+      setTimeout(typeEffect, 100);
+    } else if (isDeleting && charIndex > 0) {
+      // If condition is true, remove the previous character
+      charIndex--;
+      setTimeout(typeEffect, 80);
+    } else {
+      // If word is deleted, then switch to the next word
+      isDeleting = !isDeleting;
+      wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
+      setTimeout(typeEffect, 1200);
     }
-}
+  };
 
-typeEffect();
+  typeEffect();
+}, 1500);
