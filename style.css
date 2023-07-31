@@ -102,9 +102,9 @@ body {
 
 .home-content h3 {
   position: relative;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 700;
-  color: #00abf0;
+  color: #fff;
 }
 
 .home-content h3::before {
@@ -117,8 +117,30 @@ body {
   background: #081b29;
   animation: showRight 1s ease forwards;
   animation-delay: 1.3s;
+}
+
+.home-content h3 span {
+  position: relative;
+  color: #00abf0;
 
 }
+
+.home-content h3 span::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -8px;
+  width: 2px;
+  height: 30px;
+  background: #081b29;
+  transform: translateY(-45%);
+  animation: showRight 1s ease forwards;
+  animation-delay: 1.4s;
+  background: #00abf0;
+
+}
+
+
 
 .home-content p {
   position: relative;
