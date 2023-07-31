@@ -1,14 +1,13 @@
 setTimeout(() => {
   const dynamicText = document.querySelector("h3 span");
   const words = [
-    // "",
     "Web Developer",
     "Game Developer",
     "Web Designer",
     "Digital Marketer",
     "QA Tester",
   ];
-
+  
   let wordIndex = 0;
   let charIndex = 1;
   let isDeleting = false;
@@ -33,7 +32,7 @@ setTimeout(() => {
       isDeleting = !isDeleting;
       dynamicText.classList.remove("stop-blinking");
       wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
-      setTimeout(typeEffect, 1200);
+      setTimeout(typeEffect, 400);
     }
   };
 
